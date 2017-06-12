@@ -26,3 +26,8 @@ exports.titleCase = function(str) {
 exports.largestOfFour = function(arr) {
   return arr.map(arr => arr.sort((num1, num2) => num1 - num2)).map(arr => arr.pop());
 };
+
+exports.confirmEnding = function(str, target) {
+  // return str.endsWith(target);
+  return str.substr(-1, target.length);
+};
