@@ -22,3 +22,7 @@ exports.findLongestWord = function(str) {
 exports.titleCase = function(str) {
   return str.toLowerCase().replace(/(^|\s)([a-z])/g, char => char.toUpperCase());
 };
+
+exports.largestOfFour = function(arr) {
+  return arr.map(arr => arr.sort((num1, num2) => num1 - num2)).map(arr => arr.pop());
+};
