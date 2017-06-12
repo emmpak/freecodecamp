@@ -86,7 +86,7 @@ describe('confirmEnding', function() {
 
 describe('repeatStringNumTimes', function(){
   it('returns an empty string if the given number is negative', function(){
-    expect(basic.repeatStringNumTimes("abc", -2).toEqual(""));
+    expect(basic.repeatStringNumTimes("abc", -2)).toEqual("");
   });
 
   it('repeats the given string based on the given number', function(){

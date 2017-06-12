@@ -31,3 +31,7 @@ exports.confirmEnding = function(str, target) {
   // return str.endsWith(target);
   return str.substr(-target.length) === target;
 };
+
+exports.repeatStringNumTimes = function(str, num) {
+  return num < 0 ? '' : Array(num).fill(str).join('');
+};
