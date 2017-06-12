@@ -97,3 +97,16 @@ describe('repeatStringNumTimes', function(){
     expect(basic.repeatStringNumTimes("*", 8)).toEqual("********");
   });
 });
+
+describe('truncateString', function(){
+  it('truncates a string if it is longer than the given maximum string length and adds ...', function(){
+    expect(basic.truncateString("A-tisket a-tasket A green and yellow basket", 11)).toEqual("A-tisket...");
+    expect(basic.truncateString("Peter Piper picked a peck of pickled peppers", 14)).toEqual("Peter Piper...");
+    expect(basic.truncateString("A-", 1)).toEqual("A...");
+    expect(basic.truncateString("Absolutely Longer", 2)).toEqual("Ab...");
+  });
+
+  it('returns the string if the length is less than the given maximum', function(){
+    expect(basic.truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)).toEqual("A-tisket a-tasket A green and yellow basket");
+  });
+});
