@@ -23,3 +23,23 @@ describe('factorialize', function() {
     expect(basic.factorialize(0)).toEqual(1);
   });
 });
+
+describe('palindrome', function() {
+  it('should return true', function() {
+    expect(basic.isPalindrome('eye')).toBeTruthy;
+    expect(basic.isPalindrome('_eye')).toBeTruthy;
+    expect(basic.isPalindrome('race car')).toBeTruthy;
+    expect(basic.isPalindrome('A man, a plan, a canal. Panama')).toBeTruthy;
+    expect(basic.isPalindrome('never odd or even')).toBeTruthy;
+    expect(basic.isPalindrome('My age is 0, 0 si ega ym.')).toBeTruthy;
+    expect(basic.isPalindrome('0_0 (: /-\ :) 0-0')).toBeTruthy;
+  })
+
+  it('should return false', function() {
+    expect(basic.isPalindrome('not a palindrome')).toBeFalsy;
+    expect(basic.isPalindrome('nope')).toBeFalsy;
+    expect(basic.isPalindrome('almostomla')).toBeFalsy;
+    expect(basic.isPalindrome('1 eye for of 1 eye.')).toBeFalsy;
+    expect(basic.isPalindrome('five|\_/|four')).toBeFalsy;
+  })
+})
