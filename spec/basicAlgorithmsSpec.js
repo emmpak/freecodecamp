@@ -26,23 +26,23 @@ describe('factorialize', function() {
 
 describe('palindrome', function() {
   it('should return true', function() {
-    expect(basic.isPalindrome('eye')).toBeTruthy;
-    expect(basic.isPalindrome('_eye')).toBeTruthy;
-    expect(basic.isPalindrome('race car')).toBeTruthy;
-    expect(basic.isPalindrome('A man, a plan, a canal. Panama')).toBeTruthy;
-    expect(basic.isPalindrome('never odd or even')).toBeTruthy;
-    expect(basic.isPalindrome('My age is 0, 0 si ega ym.')).toBeTruthy;
-    expect(basic.isPalindrome('0_0 (: /-\ :) 0-0')).toBeTruthy;
-  })
+    expect(basic.isPalindrome('eye')).toBeTruthy();
+    expect(basic.isPalindrome('_eye')).toBeTruthy();
+    expect(basic.isPalindrome('race car')).toBeTruthy();
+    expect(basic.isPalindrome('A man, a plan, a canal. Panama')).toBeTruthy();
+    expect(basic.isPalindrome('never odd or even')).toBeTruthy();
+    expect(basic.isPalindrome('My age is 0, 0 si ega ym.')).toBeTruthy();
+    expect(basic.isPalindrome('0_0 (: /-\ :) 0-0')).toBeTruthy();
+  });
 
   it('should return false', function() {
-    expect(basic.isPalindrome('not a palindrome')).toBeFalsy;
-    expect(basic.isPalindrome('nope')).toBeFalsy;
-    expect(basic.isPalindrome('almostomla')).toBeFalsy;
-    expect(basic.isPalindrome('1 eye for of 1 eye.')).toBeFalsy;
-    expect(basic.isPalindrome('five|\_/|four')).toBeFalsy;
-  })
-})
+    expect(basic.isPalindrome('not a palindrome')).toBeFalsy();
+    expect(basic.isPalindrome('nope')).toBeFalsy();
+    expect(basic.isPalindrome('almostomla')).toBeFalsy();
+    expect(basic.isPalindrome('1 eye for of 1 eye.')).toBeFalsy();
+    expect(basic.isPalindrome('five|\_/|four')).toBeFalsy();
+  });
+});
 
 describe('findLongestWord', function() {
   it('returns the number of the longest word in a sentence', function() {
@@ -71,10 +71,16 @@ describe('largestOfFour', function() {
 
 describe('confirmEnding', function() {
   it('should return true if a string ends with the given target string', function() {
-    expect(basic.confirmEnding("Bastian", "n")).toBeTruthy;
+    expect(basic.confirmEnding("Bastian", "n")).toBeTruthy();
+    expect(basic.confirmEnding("He has to give me a new name", "name")).toBeTruthy();
+    expect(basic.confirmEnding("Open sesame", "same")).toBeTruthy();
+
   });
 
   it('should return false if a string does not end with the given target string', function() {
-    expect(basic.confirmEnding("Connor", "n")).toBeFalsy;
+    expect(basic.confirmEnding("Connor", "n")).toBe(false);
+    expect(basic.confirmEnding("Open sesame", "pen")).toBe(false);
+    expect(basic.confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")).toBe(false);
+    expect(basic.confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")).toBe(false);
   });
 });
