@@ -35,3 +35,7 @@ exports.confirmEnding = function(str, target) {
 exports.repeatStringNumTimes = function(str, num) {
   return num < 0 ? '' : Array(num).fill(str).join('');
 };
+
+exports.truncateString = function(str, num) {
+  return str.length <= num ? str : num > 4 ? str.substring(0,num-3) + '...' : str.substring(0,num) + '...'
+};
