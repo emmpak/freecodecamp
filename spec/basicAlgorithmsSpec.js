@@ -45,15 +45,11 @@ describe('palindrome', function() {
 })
 
 describe('findLongestWord', function() {
-  it('returns a number', function() {
-    expect(basic.longestWord).toBe(jasmine.any(Number));
-  });
-
   it('returns the number of the longest word in a sentence', function() {
-    expect(findLongestWord("The quick brown fox jumped over the lazy dog")).toEqual(6);
-    expect(findLongestWord("May the force be with you")).toEqual(5);
-    expect(findLongestWord("Google do a barrel roll")).toEqual(6);
-    expect(findLongestWord("What is the average airspeed velocity of an unladen swallow")).toEqual(8);
-    expect(findLongestWord("What if we try a super-long word such as otorhinolaryngology")).toEqual(19);
+    expect(basic.findLongestWord("The quick brown fox jumped over the lazy dog")).toEqual(6);
+    expect(basic.findLongestWord("May the force be with you")).toEqual(5);
+    expect(basic.findLongestWord("Google do a barrel roll")).toEqual(6);
+    expect(basic.findLongestWord("What is the average airspeed velocity of an unladen swallow")).toEqual(8);
+    expect(basic.findLongestWord("What if we try a super-long word such as otorhinolaryngology")).toEqual(19);
   });
 });

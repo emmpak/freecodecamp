@@ -14,3 +14,7 @@ exports.isPalindrome = function(str) {
   str = str.replace(/[\W_]/g,'').toLowerCase()
   return  str === this.reverseString(str);
 };
+
+exports.findLongestWord = function(str) {
+  return str.split(' ').map(word => word.length).sort((num1, num2) => num1 - num2).pop();
+};
