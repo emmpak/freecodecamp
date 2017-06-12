@@ -29,5 +29,5 @@ exports.largestOfFour = function(arr) {
 
 exports.confirmEnding = function(str, target) {
   // return str.endsWith(target);
-  return str.substr(-1, target.length) === target;
+  return str.substr(-target.length) === target;
 };
