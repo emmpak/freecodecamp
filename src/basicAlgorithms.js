@@ -9,3 +9,8 @@ exports.factorialize = function(num) {
   return num * this.factorialize(num-1);
   // return Array(num).fill().map(function(e, i) { return ++i; }).reduce(function(sum, num) { return sum * num; });
 };
+
+exports.isPalindrome = function(str) {
+  str = str.replace(/[^A-Za-z0-9]/g,'').toLowerCase()
+  return  str === this.reverseString(str);
+};
