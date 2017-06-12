@@ -11,6 +11,6 @@ exports.factorialize = function(num) {
 };
 
 exports.isPalindrome = function(str) {
-  str = str.replace(/[^A-Za-z0-9]/g,'').toLowerCase()
+  str = str.replace(/[\W_]/g,'').toLowerCase()
   return  str === this.reverseString(str);
 };
