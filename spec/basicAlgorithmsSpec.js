@@ -74,7 +74,6 @@ describe('confirmEnding', function() {
     expect(basic.confirmEnding("Bastian", "n")).toBeTruthy();
     expect(basic.confirmEnding("He has to give me a new name", "name")).toBeTruthy();
     expect(basic.confirmEnding("Open sesame", "same")).toBeTruthy();
-
   });
 
   it('should return false if a string does not end with the given target string', function() {
@@ -82,5 +81,19 @@ describe('confirmEnding', function() {
     expect(basic.confirmEnding("Open sesame", "pen")).toBe(false);
     expect(basic.confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")).toBe(false);
     expect(basic.confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")).toBe(false);
+  });
+});
+
+describe('repeatStringNumTimes', function(){
+  it('returns an empty string if the given number is negative', function(){
+    expect(basic.repeatStringNumTimes("abc", -2).toEqual(""));
+  });
+
+  it('repeats the given string based on the given number', function(){
+    expect(basic.repeatStringNumTimes("*", 3)).toEqual("***");
+    expect(basic.repeatStringNumTimes("abc", 3)).toEqual("abcabcabc");
+    expect(basic.repeatStringNumTimes("abc", 4)).toEqual("abcabcabcabc");
+    expect(basic.repeatStringNumTimes("abc", 1)).toEqual("abc");
+    expect(basic.repeatStringNumTimes("*", 8)).toEqual("********");
   });
 });
