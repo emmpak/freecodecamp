@@ -108,5 +108,6 @@ describe('truncateString', function(){
 
   it('returns the string if the length is less than the given maximum', function(){
     expect(basic.truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)).toEqual("A-tisket a-tasket A green and yellow basket");
+    expect(basic.truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)).toEqual("A-tisket a-tasket A green and yellow basket");
   });
 });
