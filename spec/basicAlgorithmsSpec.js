@@ -123,3 +123,11 @@ describe('chunkArrayInGroups', function(){
     expect(basic.chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)).toEqual([[0, 1], [2, 3], [4, 5], [6, 7], [8]]);
   });
 });
+
+describe('slasher', function(){
+  it('returns the remaining elements of the array after removing the given amount from the head', function(){
+    expect(basic.slasher([1, 2, 3], 2)).toEqual([3]);
+    expect(basic.slasher([1, 2, 3], 0)).toEqual([1, 2, 3]);
+    expect(basic.slasher([1, 2, 3], 9)).toEqual([]);
+  });
+});
