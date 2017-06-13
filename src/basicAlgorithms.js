@@ -37,5 +37,6 @@ exports.repeatStringNumTimes = function(str, num) {
 };
 
 exports.truncateString = function(str, num) {
-  return str.length <= num ? str : num > 4 ? str.substring(0,num-3) + '...' : str.substring(0,num) + '...'
+  let new_str = num > 4 ? str.substring(0,num-3) + '...' : str.substring(0,num) + '...';
+  return str.length <= num ? str : new_str;
 };
