@@ -157,3 +157,13 @@ describe('bouncer', function(){
     expect(basic.bouncer([1, null, NaN, 2, undefined])).toEqual([1, 2]);
   });
 });
+
+describe('destroyer', function() {
+  it('removes all elements from the initial array that are of the same value as the additional arguments', function(){
+    expect(basic.destroyer([1, 2, 3, 1, 2, 3], 2, 3)).toEqaul([1, 1]);
+    expect(basic.destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)).toEqaul([1, 5, 1]);
+    expect(basic.destroyer([3, 5, 1, 2, 2], 2, 3, 5)).toEqaul([1]);
+    expect(basic.destroyer([2, 3, 2, 3], 2, 3)).toEqaul([]);
+    expect(basic.destroyer(["tree", "hamburger", 53], "tree", 53)).toEqaul(["hamburger"]);
+  });
+});
