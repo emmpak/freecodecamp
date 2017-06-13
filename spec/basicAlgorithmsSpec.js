@@ -160,10 +160,10 @@ describe('bouncer', function(){
 
 describe('destroyer', function() {
   it('removes all elements from the initial array that are of the same value as the additional arguments', function(){
-    expect(basic.destroyer([1, 2, 3, 1, 2, 3], 2, 3)).toEqaul([1, 1]);
-    expect(basic.destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)).toEqaul([1, 5, 1]);
-    expect(basic.destroyer([3, 5, 1, 2, 2], 2, 3, 5)).toEqaul([1]);
-    expect(basic.destroyer([2, 3, 2, 3], 2, 3)).toEqaul([]);
-    expect(basic.destroyer(["tree", "hamburger", 53], "tree", 53)).toEqaul(["hamburger"]);
+    expect(basic.destroyer([1, 2, 3, 1, 2, 3], 2, 3)).toEqual([1, 1]);
+    expect(basic.destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)).toEqual([1, 5, 1]);
+    expect(basic.destroyer([3, 5, 1, 2, 2], 2, 3, 5)).toEqual([1]);
+    expect(basic.destroyer([2, 3, 2, 3], 2, 3)).toEqual([]);
+    expect(basic.destroyer(["tree", "hamburger", 53], "tree", 53)).toEqual(["hamburger"]);
   });
 });

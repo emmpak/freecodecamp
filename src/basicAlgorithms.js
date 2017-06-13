@@ -61,3 +61,7 @@ exports.mutation = function(arr) {
 exports.bouncer = function(arr) {
   return arr.filter(val => !!val);
 };
+
+exports.destroyer = function(arr) {
+  return arr.filter(val => Array.from(arguments).indexOf(val) === -1);
+};
