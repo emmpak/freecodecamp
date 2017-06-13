@@ -52,3 +52,8 @@ exports.chunkArrayInGroups = function(arr, num) {
 exports.slasher = function(arr, howMany) {
   return arr.slice(howMany);
 };
+
+exports.mutation = function(arr) {
+  arr = arr.map(str => str.toLowerCase());
+  return arr[1].split('').every(char => arr[0].includes(char));
+};
