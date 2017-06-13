@@ -111,3 +111,15 @@ describe('truncateString', function(){
     expect(basic.truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)).toEqual("A-tisket a-tasket A green and yellow basket");
   });
 });
+
+describe('chunkArrayInGroups', function(){
+  it('splits an array into groups the length of the given size and returns them as a two-dimensional array', function(){
+    expect(basic.chunkArrayInGroups(["a", "b", "c", "d"], 2)).toEqual([["a", "b"], ["c", "d"]]);
+    expect(basic.chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)).toEqual([[0, 1, 2], [3, 4, 5]]);
+    expect(basic.chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)).toEqual([[0, 1], [2, 3], [4, 5]]);
+    expect(basic.chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)).toEqual([[0, 1, 2, 3], [4, 5]]);
+    expect(basic.chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)).toEqual([[0, 1, 2], [3, 4, 5], [6]]);
+    expect(basic.chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)).toEqual([[0, 1, 2, 3], [4, 5, 6, 7], [8]]);
+    expect(basic.chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)).toEqual([[0, 1], [2, 3], [4, 5], [6, 7], [8]]);
+  });
+});
