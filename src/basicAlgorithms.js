@@ -57,3 +57,7 @@ exports.mutation = function(arr) {
   arr = arr.map(str => str.toLowerCase());
   return arr[1].split('').every(char => arr[0].includes(char));
 };
+
+exports.bouncer = function(arr) {
+  return arr.filter(val => !!val);
+};
