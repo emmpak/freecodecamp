@@ -40,3 +40,11 @@ exports.truncateString = function(str, num) {
   let new_str = num > 4 ? str.substring(0,num-3) + '...' : str.substring(0,num) + '...';
   return str.length <= num ? str : new_str;
 };
+
+exports.chunkArrayInGroups = function(arr, num) {
+  let new_arr = [];
+  for(let i=0; i < arr.length; i += num) {
+    new_arr.push(arr.slice(i, i + num));
+  }
+  return new_arr;
+};
