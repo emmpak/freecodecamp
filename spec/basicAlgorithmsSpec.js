@@ -148,3 +148,12 @@ describe('mutation', function(){
     expect(basic.mutation(["voodoo", "no"])).toBe(false);
   });
 });
+
+describe('bouncer', function(){
+  it('removes all falsy values from an array', function(){
+    expect(basic.bouncer([7, "ate", "", false, 9])).toEqual([7, "ate", 9]);
+    expect(basic.bouncer(["a", "b", "c"])).toEqual(["a", "b", "c"]);
+    expect(basic.bouncer([false, null, 0, NaN, undefined, ""])).toEqual([]);
+    expect(basic.bouncer([1, null, NaN, 2, undefined])).toEqual([1, 2]);
+  });
+});
