@@ -48,3 +48,7 @@ exports.chunkArrayInGroups = function(arr, num) {
   }
   return new_arr;
 };
+
+exports.slasher = function(arr, howMany) {
+  return arr.slice(howMany);
+};
