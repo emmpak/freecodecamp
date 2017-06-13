@@ -131,3 +131,20 @@ describe('slasher', function(){
     expect(basic.slasher([1, 2, 3], 9)).toEqual([]);
   });
 });
+
+describe('mutation', function(){
+  it('returns true if the string in the first element of the array contains all of the letters of the string in the second element of the array', function(){
+    expect(basic.mutation(["hello", "Hello"])).toBe(true);
+    expect(basic.mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])).toBe(true);
+    expect(basic.mutation(["Mary", "Army"])).toBe(true);
+    expect(basic.mutation(["Mary", "Aarmy"])).toBe(true);
+    expect(basic.mutation(["Alien", "line"])).toBe(true);
+    expect(basic.mutation(["floor", "for"])).toBe(true);
+  });
+
+  it('returns false if the string in the first element of the array does not contain all of the letters of the string in the second element of the array', function(){
+    expect(basic.mutation(["hello", "hey"])).toBe(false);
+    expect(basic.mutation(["hello", "neo"])).toBe(false);
+    expect(basic.mutation(["voodoo", "no"])).toBe(false);
+  });
+});
