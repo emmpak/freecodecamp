@@ -179,3 +179,12 @@ describe('getIndexToIns', function(){
     expect(basic.getIndexToIns([2, 5, 10], 15)).toEqual(3);
   });
 });
+
+describe('rot13', function(){
+  it('takes ROT13 encoded string as input and returns a decoded string', function(){
+    expect(basic.rot13("SERR PBQR PNZC")).toEqual("FREE CODE CAMP");
+    expect(basic.rot13("SERR CVMMN!")).toEqual("FREE PIZZA!");
+    expect(basic.rot13("SERR YBIR?")).toEqual("FREE LOVE?");
+    expect(basic.rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.")).toEqual("THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.");
+  });
+});
