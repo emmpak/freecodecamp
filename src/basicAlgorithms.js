@@ -68,3 +68,7 @@ exports.destroyer = function(arr) {
   // var args = Array.from(arguments);
   // return arr.filter(function(val) { return args.indexOf(val) === -1; });
 };
+
+exports.getIndexToIns = function(arr, num) {
+  return arr.concat(num).sort((num1, num2) => num1 - num2).indexOf(num);
+};
