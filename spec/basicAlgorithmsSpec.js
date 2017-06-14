@@ -167,3 +167,15 @@ describe('destroyer', function() {
     expect(basic.destroyer(["tree", "hamburger", 53], "tree", 53)).toEqual(["hamburger"]);
   });
 });
+
+describe('getIndexToIns', function(){
+  it('returns the lowest index at which the second argument should be instereted into the array once it has been sorted', function(){
+    expect(basic.getIndexToIns([10, 20, 30, 40, 50], 35)).toEqual(3);
+    expect(basic.getIndexToIns([10, 20, 30, 40, 50], 30)).toEqual(2);
+    expect(basic.getIndexToIns([40, 60], 50)).toEqual(1);
+    expect(basic.getIndexToIns([3, 10, 5], 3)).toEqual(0);
+    expect(basic.getIndexToIns([5, 3, 20, 3], 5)).toEqual(2);
+    expect(basic.getIndexToIns([2, 20, 10], 19)).toEqual(2);
+    expect(basic.getIndexToIns([2, 5, 10], 15)).toEqual(3);
+  });
+});
