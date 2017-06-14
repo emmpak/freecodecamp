@@ -72,3 +72,13 @@ exports.destroyer = function(arr) {
 exports.getIndexToIns = function(arr, num) {
   return arr.concat(num).sort((num1, num2) => num1 - num2).indexOf(num);
 };
+
+exports.rot13 = function(str) {
+  return str.replace(/[A-Z]/g, decode);
+};
+
+function decode(letter) {
+  let ascii = letter.charCodeAt();
+  let num = ascii < 78 ? (ascii + 13) : (ascii - 13);
+  return String.fromCharCode(num);
+}
