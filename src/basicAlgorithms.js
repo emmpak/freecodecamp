@@ -63,5 +63,8 @@ exports.bouncer = function(arr) {
 };
 
 exports.destroyer = function(arr) {
+  // no binding of 'arguments' object with arrow functions
   return arr.filter(val => Array.from(arguments).indexOf(val) === -1);
+  // var args = Array.from(arguments);
+  // return arr.filter(function(val) { return args.indexOf(val) === -1; });
 };
