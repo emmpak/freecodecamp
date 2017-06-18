@@ -50,3 +50,12 @@ describe('convertToRoman', function(){
     expect(intermediate.convertToRoman(3999)).toEqual("MMMCMXCIX");
   });
 });
+
+describe('whatIsInAName', function(){
+  it('returns an array of all objects that have matching property and value pairs', function(){
+    expect(intermediate.whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })).toEqual([{ first: "Tybalt", last: "Capulet" }]);
+    expect(intermediate.whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 })).toEqual([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }]);
+    expect(intermediate.whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 })).toEqual([{ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 2 }]);
+    expect(intermediate.whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 })).toEqual([{ "a": 1, "b": 2, "c": 2 }]);
+  });
+});
