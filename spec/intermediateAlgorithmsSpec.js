@@ -11,12 +11,12 @@ describe('sumAll', function(){
 
 describe('diffArray', function(){
   it('returns the symmetric difference of the given arrays', function(){
-    expect(intermediate.diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"])).toEqual(["pink wool"]);
-    expect(intermediate.diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"])).toEqual(["diorite", "pink wool"]);
-    expect(intermediate.diffArray(["andesite", "grass", "dirt", "dead shrub"])).toEqual([]);
-    expect(intermediate.diffArray([1, 2, 3, 5])).toEqual([4]);
-    expect(intermediate.diffArray([1, "calf", 3, "piglet"])).toEqual(["piglet", 4]);
-    expect(intermediate.diffArray([])).toEqual(["snuffleupagus", "cookie monster", "elmo"]);
-    expect(intermediate.diffArray([1, "calf", 3, "piglet"])).toEqual([1, "calf", 3, "piglet", 7, "filly"]);
+    expect(intermediate.diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])).toEqual(["pink wool"]);
+    expect(intermediate.diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])).toEqual(["diorite", "pink wool"]);
+    expect(intermediate.diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"])).toEqual([]);
+    expect(intermediate.diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])).toEqual([4]);
+    expect(intermediate.diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])).toEqual(["piglet", 4]);
+    expect(intermediate.diffArray([], ["snuffleupagus", "cookie monster", "elmo"])).toEqual(["snuffleupagus", "cookie monster", "elmo"]);
+    expect(intermediate.diffArray([1, "calf", 3, "piglet"], [7, "filly"])).toEqual([1, "calf", 3, "piglet", 7, "filly"]);
   });
 });
