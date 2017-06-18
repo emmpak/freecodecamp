@@ -11,5 +11,6 @@ function addNum(num1, num2) {
 }
 
 exports.diffArray = function(arr1, arr2) {
-
+  let arr = arr1.concat(arr2);
+  return arr.filter((e, i, array) => array.indexOf(e) === arr.lastIndexOf(e));
 };
